@@ -59,8 +59,11 @@
                   </li>
                   <li><a><i class="fa fa-cubes"></i> Kubernetes<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="asdfasdf">Deployment</a></li>
-                        <li><a href="asdf">Pods</a></li>
+                        <li><a href="../web/pods">Deployment</a></li>
+                        <script type="text/javascript">
+                          function pods(){$('#main').load('../web/pods');}
+                        </script>
+                        <li><a href="#" onClick="pods();">Pods</a></li>
                         <li><a href="asdf">Services</a></li>
                         <li><a href="asdf">Secrets</a></li>
                       </ul>
@@ -111,8 +114,7 @@
         <!-- /top navigation -->
 
         <!-- page content -->
-        <div class="right_col" role="main">
-          
+        <div class="right_col" role="main" id="main">
             <div class="page-title">
                 <div class="title_left">
                   <h3>Kubernetes</h3>
