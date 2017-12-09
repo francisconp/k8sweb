@@ -1,37 +1,39 @@
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <div class="page-title">
-                <div class="title_left">
-                    <h3>Kubernetes</h3>
-                </div>
-                    </div>
-  
+<!-- page content -->
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="x_panel">
-                    <div class="x_content">
-                      <table class="table table-striped">
-                        <thead>
-
-                          <tr>
-                            <th>IP</th>
-                            <th>Namespace</th>
-                            <th>Pod Name</th>
-                          </tr>
-                        </thead>
-                        <tbody>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Pods</h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>IP</th>
+                          <th>Namespace</th>
+                          <th>Pode Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
                         {% for pod in pods %}
-                            <tr>
-                                <td>{{ pod.status.pod_ip }}</td>
-                                <td>{{pod.metadata.namespace}}</td>
-                                <td>{{pod.metadata.name}}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                      </table>
-                    </div>
+                        <tr>
+                          <td>{{ pod.status.pod_ip }}</td>
+                          <td>{{pod.metadata.namespace}}</td>
+                          <td>
+                            {% for name in pod.status.container_statuses %} 
+                              {{name.name}} 
+                            {% endfor %}
+                          </td>
+                        </tr>
+                    {% endfor %}
+                      </tbody>
+                    </table>
+
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
+        <!-- /page content -->
