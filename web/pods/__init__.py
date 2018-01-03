@@ -2,7 +2,6 @@ from kubernetes import client, config
 
 config.load_kube_config()
 
-
 class Pods:
     def __init__(self):
         pass

@@ -59,7 +59,11 @@
                   </li>
                   <li><a><i class="fa fa-cubes"></i> Kubernetes<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="../web/pods">Deployment</a></li>
+                        <script type="text/javascript">
+                          function deployment(){$('#main').load('../web/deploy');}
+                        </script>
+                        <li><a href="#" onClick="deployment();">Deployment</a></li>
+
                         <script type="text/javascript">
                           function pods(){$('#main').load('../web/pods');}
                         </script>
